@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fee Receipt</title>
+
+  <!-- ROBOTO FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    body {
+      font-family: "Roboto", sans-serif;
+      background: #f3f4f6;
+      margin: 0;
+      padding: 0;
+      -webkit-print-color-adjust: exact;
+      height: auto !important;
+      overflow: visible !important;
+    }
+
+    .page-wrapper {
+      width: 100%;
+      padding: 20px 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .receipt {
+      background: #ffffff;
+      width: 600px;
+      padding: 25px 35px;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      page-break-inside: avoid;
+    }
+
+    /* HEADER */
+    .receipt-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #4f46e5;
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      width: 130px;
+    }
+
+    .inst-name {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1f2937;
+      text-transform: uppercase;
+      letter-spacing: .7px;
+    }
+
+    .inst-address {
+      font-size: 13px;
+      color: #4b5563;
+      margin-top: 5px;
+      line-height: 1.4;
+    }
+
+    .receipt-no input {
+      width: 120px;
+      border: none;
+      border-bottom: 1px solid #4f46e5;
+      outline: none;
+      font-weight: 700;
+      text-align: center;
+      background: transparent;
+    }
+
+    /* INPUT ROWS */
+    .row {
+      display: flex;
+      margin-bottom: 12px;
+      font-size: 15px;
+    }
+
+    .row label {
+      width: 180px;
+      font-weight: 600;
+      color: #1f2937;
+    }
+
+    .row input {
+      flex-grow: 1;
+      border: none;
+      border-bottom: 1px solid #9ca3af;
+      padding: 4px 0;
+      font-size: 15px;
+      outline: none;
+      background: transparent;
+    }
+
+    /* AMOUNT BOX */
+    .amount-box {
+      border: 2px solid #4f46e5;
+      padding: 12px 15px;
+      width: 260px;
+      font-size: 17px;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 20px;
+    }
+
+    .amount-box input {
+      width: 180px;
+      border: none;
+      border-bottom: 1px solid #4f46e5;
+      font-size: 18px;
+      font-weight: 700;
+      outline: none;
+      background: transparent;
+    }
+
+    /* SIGNATURE SECTION */
+    .signature {
+      margin-top: -80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px; /* Close spacing */
+    }
+
+    .sign-img {
+      width: 250px;
+      object-fit: contain;
+    }
+
+    .stamp-img {
+
+  width: 300px;
+  height: 350px;
+  opacity: 0.95;
+
+    }
+
+
+
+    /* FOOTER */
+    .footer {
+      font-size: 12px;
+      text-align: center;
+      color: #6b7280;
+    }
+
+    /* DOWNLOAD BUTTON */
+    .download-btn {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .download-btn button {
+      background: #4f46e5;
+      color: white;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .download-btn button:hover {
+      background: #4338ca;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="page-wrapper">
+  <div class="receipt" id="receipt">
+
+    <div class="receipt-header">
+      <div>
+        <img src="./logo.png" class="logo" />
+        <div class="inst-name">TUITIFY ACADEMY</div>
+        <div class="inst-address">
+          H.No. B-696, KH.No- 72/3 <br>
+Nihal Vihar, Nangloi, Delhi-110041 <br>
+Email: harshgoyal0219@gmail.com | Phone: +91 8810447344
+        </div>
+      </div>
+
+      <div class="receipt-no">
+        Receipt No:<br>
+        <input type="text" />
+      </div>
+    </div>
+
+    <div class="amount-box">
+      Rs. <input type="text" />
+    </div>
+
+    <div class="row">
+      <label>Name of Student:</label>
+      <input type="text" />
+    </div>
+
+    <div class="row">
+      <label>Father's Name:</label>
+      <input type="text" />
+    </div>
+
+    <div class="row">
+      <label>Mobile Number:</label>
+      <input type="text" />
+    </div>
+
+    <div class="row">
+      <label>Fee Received:</label>
+      <input type="text" />
+    </div>
+
+    <div class="row">
+      <label>(In Words):</label>
+      <input type="text" />
+    </div>
+
+    <div class="row">
+      <label>Class:</label>
+      <input type="text" />
+    </div>
+
+    <div class="row">
+      <label>Course:</label>
+      <input type="text" />
+    </div>
+
+    <div class="row">
+      <label>Course Duration:</label>
+      <input type="text" />
+    </div>
+
+    <div class="row">
+      <label>Date:</label>
+      <input type="date" />
+    </div>
+
+    <!-- SIGNATURE -->
+    <div class="signature">
+      <img src="./sign.png" class="sign-img" />
+      <img src="./stamp.png" class="stamp-img" />
+    </div>
+
+    <div class="footer">
+      This is a computer-generated receipt and does not require a seal.
+    </div>
+
+  </div>
+</div>
+
+<div class="download-btn">
+  <button onclick="downloadPDF()">Download Receipt (PDF)</button>
+</div>
+
+<!-- Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+  async function downloadPDF() {
+    const { jsPDF } = window.jspdf;
+
+    const receipt = document.getElementById("receipt");
+
+    const canvas = await html2canvas(receipt, {
+      scale: 3,
+      useCORS: true,
+      windowHeight: document.body.scrollHeight,
+    });
+
+    const imgData = canvas.toDataURL("image/png");
+    const pdf = new jsPDF("p", "mm", "a4");
+
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight = pdf.internal.pageSize.getHeight();
+
+    const imgWidth = pdfWidth;
+    const imgHeight = (canvas.height * pdfWidth) / canvas.width;
+
+    let heightLeft = imgHeight;
+    let position = 0;
+
+    // Add first page
+    pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+    heightLeft -= pdfHeight;
+
+    // Only add new pages if heightLeft > 0
+    while (heightLeft > 0) {
+      position = -heightLeft + pdfHeight; // correct position
+      pdf.addPage();
+      pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+      heightLeft -= pdfHeight;
+    }
+
+    pdf.save("receipt.pdf");
+  }
+</script>
+
+
+</body>
+</html>
